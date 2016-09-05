@@ -15,13 +15,13 @@ include_directories(SYSTEM ${LIBUV_INCLUDE_DIRS})
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 
-set(SOURCE_FILES src/main.c src/bencode/bencode.c src/bencode/bencode.h src/sha1/sha1-fast.c)
+set(SOURCE_FILES src/main.c src/dht/node_id.c src/dht/node_id.h src/dht/protocol.h src/bencode/bencode.c src/bencode/bencode.h src/sha1/sha1-fast.c)
 add_executable(uv ${SOURCE_FILES})
 
 set(BENCODE_FILES test/bencode_test.c src/bencode/bencode.c)
 add_executable(bencode_test ${BENCODE_FILES})
 
-set(DHT_FILES test/dht_test.c )
+set(DHT_FILES test/dht_test.c src/dht/node_id.c src/dht/node_id.h src/dht/routing_table.c src/dht/node.h)
 add_executable(dht_test ${DHT_FILES})
 
 set(SHA1_FILES test/sha1_test.c src/sha1/sha1-fast.c)

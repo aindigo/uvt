@@ -14,7 +14,6 @@ typedef struct uvt_dht_node_s {
 
 typedef struct uvt_dht_bucket_s {
   uint8_t count;
-  uvt_dht_node nodes[8]; // K = 8
 } uvt_dht_bucket;
 
 typedef struct uvt_routing_table_s {
@@ -22,6 +21,7 @@ typedef struct uvt_routing_table_s {
   uvt_node_id node_id; // this node id
   size_t node_count;
   uvt_dht_bucket buckets[160]; // reserve 30 buckets with k = 8, it should not pass the 26/27 buckets large.
+  uvt_dht_node nodes[1280]; // K = 8
 } uvt_routing_table;
 
 

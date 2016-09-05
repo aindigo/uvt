@@ -9,20 +9,20 @@
 #include <uv.h>
 
 typedef enum {
-    BE_OK = 0,
-    BE_NOT_STR = -1,  // Not a string
-    BE_NOT_VALID = -2, // Invalid string
-    BE_STR = 1,
-    BE_LST = 2,
-    BE_DIC = 3,
-    BE_INT = 4,
+  BE_OK = 0,
+  BE_NOT_STR = -1,  // Not a string
+  BE_NOT_VALID = -2, // Invalid string
+  BE_STR = 1,
+  BE_LST = 2,
+  BE_DIC = 3,
+  BE_INT = 4,
 } be_type;
 
 typedef struct be_node_s {
-    const char *buf;
-    size_t start;
-    size_t len;
-    be_type type;
+  const char *buf;
+  size_t start;
+  size_t len;
+  be_type type;
 } be_node_t;
 
 int be_init(be_node_t *self, const char *buf, const size_t len);
